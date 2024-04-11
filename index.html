@@ -21,7 +21,7 @@
       </ul>
     </nav>
 
-    <div  id="home" class="header-content">
+    <div id="home" class="header-content">
       <h1>Veneza</h1>
       <p>Conheça Veneza, e viva aventuras extraodinarias, o embarque está proximo, junte-se a nós nessa experiência</p>
       <button>Saiba mais</button>
@@ -142,7 +142,7 @@
     </div>
   </section>
 
-  <section  id="servicos" class="servicos">
+  <section id="servicos" class="servicos">
     <h1 class="servicos-title">Serviços</h1>
     <div class="servicos-cards">
       <div class="card">
@@ -162,7 +162,7 @@
         </div>
         <button>Saiba mais</button>
       </div>
-      
+
       <div class="card">
         <i data-feather="navigation"></i>
         <div class="card-content">
@@ -193,13 +193,13 @@
     feather.replace();
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-            });
+          behavior: 'smooth'
         });
+      });
     });
     // Initialize and add the map
     function initMap() {

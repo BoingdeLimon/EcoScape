@@ -93,7 +93,6 @@ button {
   color: #fff;
 }
 
-/* PACOTES */
 
 .pacotes {
   background-color: rgba(235, 231, 231, 0.363);
@@ -186,7 +185,7 @@ button {
   position: absolute;
   left: 0;
   top: 160px;
-  background: #1d61dd;
+  background: #2E4347;
   border-radius: 0 8px 8px 0;
   padding: 5px 10px;
   box-shadow: 1px 1px 4px 1px #222;
@@ -256,7 +255,7 @@ button {
   margin-bottom: 50px;
 }
 
-/* Set the size of the div element that contains the map */
+/* Set the size of the div element that contains te map */
 #map {
   height: 400px;  /* The height is 400 pixels */
   width: 100%;  /* The width is the width of the web page */

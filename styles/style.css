@@ -22,7 +22,7 @@ a {
 
 header {
   height: calc(100vh - 150px);
-  background: no-repeat center/cover url('/assets/marruecos.jpg');
+  background: url('http://localhost/EcoScape/assets/marruecos.jpg') no-repeat center/cover;
 }
 
 
@@ -30,7 +30,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   margin: 0 30px;
-  color: #fff;
+  color: black;
 }
 
 header nav p {
@@ -120,7 +120,7 @@ button {
 .pacotes .card {
   margin: 25px;
   width: 250px;
-  height: 350px;
+  height: 450px;
   background: #fff;
   border-radius: 24px 0px;
   box-shadow: 0px 0px 4px -1px #222;

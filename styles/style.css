@@ -98,16 +98,16 @@ header {
 header nav {
   position: fixed;  
   top: 0;           
-  left: 0;         
+  left: 1000;         
   width: 100%;     
   z-index: 1000;   
   background-color: #C0D1C2; 
   color: #000000;   
-  padding: 31px 600px; 
+  padding: 4px 600px; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
+  margin: 0 0px;
   color: #fff;
 }
 

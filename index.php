@@ -5,27 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco Scapes 🍃</title>
-  <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="js/slider.js"></script>
 </head>
 
 <body>
   <header>
     <nav>
-      <p>EcoScapes</p>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo" width="10%" height="100%">
+      </div>
+      <p><a href="index.php">EcoScapes</a></p>
+    
       <ul>
-        <li><a href="#home">Inicio</a></li>
+        <li><a href="#slider">Inicio</a></li>
         <li><a href="#pacotes">Paquetes</a></li>
         <li><a href="#servicos">Servicios</a></li>
         <li><a href="#contato">Contacto</a></li>
       </ul>
     </nav>
 
-    <div id="home" class="header-content">
-      <h1>Marruecos</h1>
-      <p>Viaje a Marruecos. En familia. En grupo.Cultura y naturaleza en el corazón del Rif
-      </p>
-      <button>Saiba mais</button>
+    <div id="slider" class="slider">
+      <div class="slide active" style="background-image: url('http://localhost/EcoScape/assets/marruecos.jpg');">
+        <div class="header-content">
+          <h1>Marruecos</h1>
+          <p>Viaje a Marruecos. En familia. En grupo. Cultura y naturaleza en el corazón del Rif</p>
+          <button>Saber Mas</button>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('http://localhost/EcoScape/assets/los_cabos.jpg');">
+        <div class="header-content">
+          <h1>Los Cabos</h1>
+          <p>7 días en los Cabos.</p>
+          <button>Saber Mas</button>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('http://localhost/EcoScape/assets/grand_canyon.jpg');">
+        <div class="header-content">
+          <h1>Gran Cañon</h1>
+          <p>Paquete de 14 días en el Gran Cañon
+          </p>
+          <button>Saber Mas</button>
+        </div>
+      </div>
     </div>
   </header>
 

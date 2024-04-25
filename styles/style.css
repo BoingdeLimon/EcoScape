@@ -89,9 +89,8 @@ button:hover {
 
 
 header {
-  margin-top: -90px; 
-  height: calc(88vh - 170px); 
-  background: no-repeat center/cover url('/assets/marruecos.jpg');
+  height: calc(100vh - 150px);
+  background: url('http://localhost/EcoScape/assets/marruecos.jpg') no-repeat center/cover;
 }
 
 
@@ -108,18 +107,8 @@ header nav {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   display: flex;
   justify-content: space-between;
-  align-items: center; 
-  height: 50px; 
-  background-image: linear-gradient(to right, #C0D1C2, #C0D1C2);
-}
-header nav {
-  border-bottom: 3px solid #C0D1C2; 
-  border-radius: 0 0 10px 10px; 
-}
-
-
-header nav ul li a:hover {
-  color: #ffffff;  
+  margin: 0 30px;
+  color: #fff;
 }
 
 

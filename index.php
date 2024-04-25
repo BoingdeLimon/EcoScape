@@ -4,19 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rodrigo Viagens</title>
+  <title>Eco Scapes 🍃</title>
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="styles/style.css">
-  <script src="js/javas.js"></script>
-
 </head>
 
 <body>
   <header>
     <nav>
-      <div class="logo">
-        <img src="/assets/logo.png" alt="Logo" width="100" height="77">
-      </div>
+      <p>EcoScapes</p>
       <ul>
         <li><a href="#home">Inicio</a></li>
         <li><a href="#pacotes">Paquetes</a></li>
@@ -25,29 +21,11 @@
       </ul>
     </nav>
 
-    <div id="slider" class="slider">
-      <div class="slide active" style="background-image: url('/assets/marruecos.jpg');">
-        <div class="header-content">
-          <h1>Marruecos</h1>
-          <p>Viaje a Marruecos. En familia. En grupo. Cultura y naturaleza en el corazón del Rif</p>
-          <button>Saber Mas</button>
-        </div>
-      </div>
-      <div class="slide" style="background-image: url('/assets/los_cabos.jpg');">
-        <div class="header-content">
-          <h1>Los Cabos</h1>
-          <p>7 días en los Cabos.</p>
-          <button>Saber Mas</button>
-        </div>
-      </div>
-      <div class="slide" style="background-image: url('/assets/grand_canyon.jpg');">
-        <div class="header-content">
-          <h1>Gran Cañon</h1>
-          <p>Paquete de 14 días en el Gran Cañon
-          </p>
-          <button>Saber Mas</button>
-        </div>
-      </div>
+    <div id="home" class="header-content">
+      <h1>Marruecos</h1>
+      <p>Viaje a Marruecos. En familia. En grupo.Cultura y naturaleza en el corazón del Rif
+      </p>
+      <button>Saiba mais</button>
     </div>
   </header>
 

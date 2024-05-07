@@ -20,6 +20,73 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.slider {
+  position: relative;
+  width: 100%;
+  height: calc(88vh - 170px); /* Ajusta según necesites */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Posiciona los slides fuera de la vista */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: left 0.5s ease;
+}
+
+.slide.active {
+  left: 0; /* Muestra el slide activo */
+}
+
+.header-content {
+  position: absolute;
+  top: 10%; /* Ajusta este valor para subir el contenido un poco */
+  left: 40%;
+  transform: translate(-30%, -10%); /* Ajusta también el porcentaje de translate */
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.header-content {
+  background-color: transparent; /* Asegura que no hay fondo sólido */
+  padding: 10px 20px; /* Reduce o ajusta el padding según sea necesario */
+  text-align: center; /* Centra el texto */
+  color: #fff; /* Asegura que el texto es blanco o el color deseado */
+  box-shadow: none; /* Elimina el box-shadow si no lo necesitas */
+  border: none; /* Elimina bordes */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos al centro */
+  justify-content: center; /* Centra verticalmente si es necesario */
+}
+
+h1, p {
+  margin: 10px 0; /* Ajusta el margen para separar adecuadamente el texto y el botón */
+}
+
+button {
+  background-color: #f56c11; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin bordes */
+  padding: 10px 20px; /* Padding del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+button:hover {
+  background-color: #e65300; /* Cambio de color al pasar el mouse */
+}
+
+
+
 
 .logo {
   display: flex;
@@ -99,6 +166,7 @@ header {
   /* background: no-repeat center/cover url('/assets/marruecos.jpg'); */
 }
 
+
 header nav {
   display: flex;
   position: fixed;  
@@ -165,6 +233,7 @@ header nav ul li:hover {
   to {transform:   translateY(-20px);
       opacity: 1;}
 }
+  
 button {
   padding: 10px 15px;
   border-radius: 8px;

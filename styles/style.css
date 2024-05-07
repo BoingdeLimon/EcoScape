@@ -5,6 +5,119 @@
   box-sizing: border-box;
   padding: 0;
 }
+.body-no-scroll {
+  overflow: hidden;
+  height: 100%; /* Fija la altura para evitar el desplazamiento vertical */
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5000; /* Asegúrate de que esto sea más alto que cualquier otro z-index en tu CSS */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.slider {
+  position: relative;
+  z-index: 100; /* Un valor menor que el de .modal */
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 75%; /* Ajuste según necesidad */
+  box-shadow: 0px 0px 4px -1px #222; /* Sombra similar a la de los cards */
+  border-radius: 24px 0px; /* Bordes redondeados en la parte superior izquierda y en la inferior derecha */
+  position: relative;
+  padding-top: 20px; /* Espacio para el botón de cierre */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrado del contenido */
+}
+
+.modal-content {
+  position: relative;
+  padding-top: 5px; /* Espacio para el botón de cierre */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(0, 0, 0);
+}
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content {
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.gallery {
+  flex: 1;
+}
+.main-image img {
+  width: 100%;  /* Ajusta según sea necesario */
+  height: auto;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.thumbnails img {
+  width: 70px;  
+  height: auto;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.description {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.description h2 {
+  margin-top: 0;
+}
 
 body {
   margin-top: 100px;
@@ -80,7 +193,15 @@ button {
   cursor: pointer; /* Cursor de mano al pasar sobre el botón */
   transition: background-color 0.3s; /* Transición suave del color de fondo */
 }
-
+buttondos {
+  background-color: #000000; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin bordes */
+  padding: 10px 20px; /* Padding del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
 button:hover {
   background-color: #e65300; /* Cambio de color al pasar el mouse */
 }
@@ -89,13 +210,24 @@ button:hover {
 
 
 .logo {
-  display: inline-flex;
+  width: 100%;
+  height: 100%;
+
+}
+
+header {
+  position: relative; /* O 'fixed' si quieres que el header sea fijo en la parte superior */
+  top: 0;
+  width: 100%;
+  height: 20px; /* Ajusta esto según el alto de tu header */
+  z-index: 1000;
 }
 
 .slider {
   position: relative;
   width: 100%;
-  height: calc(88vh - 170px); /* Ajusta según necesites */
+  top: 20px; /* Debe ser igual a la altura del header */
+  height: calc(100vh - 120px); /* Ajusta la altura del slider para que tome el espacio restante */
   overflow: hidden;
 }
 
@@ -177,7 +309,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center; 
-  height: 50px; 
+  height: 75px; 
   background-image: linear-gradient(to right, #C0D1C2, #C0D1C2);
   border-bottom: 3px solid #C0D1C2; 
   border-radius: 0 0 10px 10px; 
@@ -254,6 +386,7 @@ button {
 
 
 .pacotes {
+  margin-top: 140px;
   background-color: rgba(235, 231, 231, 0.363);
   padding: 25px;
 }
@@ -348,6 +481,14 @@ button {
   border-radius: 0 8px 8px 0;
   padding: 5px 10px;
   box-shadow: 1px 1px 4px 1px #222;
+}
+.pacotes .card .card-tag-bottomdos {
+  position: absolute;
+  right: 0;
+  top: 400px;
+
+  padding: 5px 10px;
+ 
 }
 
 .pacotes .card .card-tag p {

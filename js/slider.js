@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
       slides[index].classList.add('active');
     }
     
-    setInterval(nextSlide, 3000); // Cambia cada 3000 milisegundos (3 segundos)
+    setInterval(nextSlide, 4500); // Cambia cada 3000 milisegundos (3 segundos)
   });
   

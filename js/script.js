@@ -3,6 +3,7 @@ const registerLink = document.querySelector('.register-link');
 const loginLink = document.querySelector('.login-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
 const iconClose = document.querySelector('.icon-close');
+wrapper.classList.add('active-popup');
 
 registerLink.onclick = () => {
     wrapper.classList.add('active');
@@ -12,14 +13,14 @@ loginLink.onclick = () => {
     wrapper.classList.remove('active');
 }
 
-btnPopup.onclick = () => {
-    wrapper.classList.add('active-popup');
-}
+// btnPopup.onclick = () => {
+//     wrapper.classList.add('active-popup');
+// }
 
-iconClose.onclick = () => {
-    wrapper.classList.remove('active-popup');
-    wrapper.classList.remove('active');
-}
+// iconClose.onclick = () => {
+//     wrapper.classList.remove('active-popup');
+//     wrapper.classList.remove('active');
+// }
 
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto

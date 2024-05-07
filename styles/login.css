@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-/*
+
+body {
+    background: url('http://localhost/EcoScape/assets/berlim.jpeg');
+}
+
 .btnLogin-popup {
     position: relative;
     background: transparent;
@@ -20,10 +24,10 @@
     height: 2px;
     background: #000;
     opacity: .85;
-}*/
+}
 
 .section {
-    /* background: url('http://localhost/EcoScape/assets/berlim.jpeg') no-repeat; */
+    background-image: url('http://localhost/EcoScape/assets/paris.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -33,7 +37,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 450px;
+    width: 500px;
     height: auto; /* Adjust height as needed */
     background: transparent;
     backdrop-filter: blur(15px);
@@ -249,5 +253,4 @@
     color: deeppink;
     font-style: italic;
     font-size: medium;
-
 }

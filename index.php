@@ -28,7 +28,7 @@
         <li><a href="#servicos"><i data-feather="camera"></i></a></li>
         <li><a href="#contato"><i data-feather="user"></i></a></li>
         <?php
-          require 'connection.php';
+          // require 'connection.php';
           session_start();
           if (isset($_SESSION['username'])) {
             // echo '<li><a href="session.php"><i data-feather="user-check"></i></a>'.$_SESSION['username'].'</li>';

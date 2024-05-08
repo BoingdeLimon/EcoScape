@@ -11,6 +11,7 @@ $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$pas
 
 // Ejecutar la consulta
 if ($conn->query($sql) === TRUE) {
+    session_start();
     $_SESSION['username'] = $username;
     $response = array('success' => true);
 } else {

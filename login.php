@@ -11,6 +11,7 @@ $result = $conn->query($sql);
 // Verificar si hay algún resultado
 if ($result->num_rows > 0) {
     // Usuario y contraseña válidos, establecer variable de sesión y redirigir a la página de inicio
+    session_start();
     $_SESSION['username'] = $username;
     $response = array('success' => true);
 } else {

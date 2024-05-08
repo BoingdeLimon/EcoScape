@@ -3,7 +3,7 @@ require 'connection.php';
 
 // Recibir datos del formulario
 $username = $_POST['username'];
-$password = sha1($_POST['password']); // ciframos la contraseña usando SHA1
+$password = sha1($_POST['password']);
 $email = $_POST['email'];
 
 // Consulta SQL para insertar el usuario
@@ -11,7 +11,6 @@ $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$pas
 
 // Ejecutar la consulta
 if ($conn->query($sql) === TRUE) {
-    // header("Location: index.php");
     $_SESSION['username'] = $username;
     $response = array('success' => true);
 } else {

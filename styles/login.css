@@ -1,44 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 body {
-    background: url('http://localhost/EcoScape/assets/berlim.jpeg');
+    background-image: url('http://localhost/EcoScape/assets/canada.jpg');
+    background-size: cover;
+    /* Para asegurarte de que la imagen de fondo cubra todo el fondo */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.btnLogin-popup {
+.logo-container {
     position: relative;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 19px;
-    color: #000;
-    font-weight: 500;
-    cursor: pointer;
+    width: 600px;
+    /* Ancho del logo */
+    height: auto;
+    /* Altura del logo */
+    margin: 0 auto;
 }
 
-.btnLogin-popup::before {
-    content: '';    
-    position: absolute;
-    left: 0;
-    bottom: -4px;
+.logo {
     width: 100%;
-    height: 2px;
-    background: #000;
-    opacity: .85;
+    height: 100%;
+}
+
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    /* Ancho de cada partícula */
+    height: 10px;
+    /* Altura de cada partícula */
+    background-color: rgba(12, 208, 222, 0.5);
+    /* Color de las partículas */
+    border-radius: 50%;
+    /* Forma circular */
+    animation: orbit 3s linear infinite;
+    /* Animación de órbita */
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+        /* Inicial: posición y rotación */
+    }
+    to {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+        /* Final: posición y rotación */
+    }
+}
+
+/* Posiciona cada partícula alrededor del logo */
+.particle:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+
+.particle:nth-child(2) {
+    top: 20px;
+    right: 20px;
+}
+
+.particle:nth-child(3) {
+    bottom: 20px;
+    left: 50%;
 }
 
 .section {
-    background-image: url('http://localhost/EcoScape/assets/paris.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
 }
 
 .wrapper {
+    margin-inline-end: 15px;
+    width: 45%;
+    height: auto;
+    background-color: rgba(225, 225, 250, 0.05);
+    backdrop-filter: blur(75px);
+    box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
+    border: 4px solid rgba(255, 255, 255, .1);
+    border-radius: 24px 0px;
+    padding: 40px;
+    pointer-events: none;
+}
+
+/* .wrapper {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: auto; /* Adjust height as needed */
+    left: 70%;
+    transform: translate(-70%, -50%);
+    width: 50%;
+    height: auto;
     background: transparent;
     backdrop-filter: blur(15px);
     box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
@@ -51,30 +111,19 @@ body {
     padding: 0 40px;
     opacity: 0;
     pointer-events: none;
+} */
+
+.section .logreg-box {
+    width: 100%;
+}
+
+.section .media-options {
+    text-align: center;
 }
 
 .wrapper.active-popup {
     opacity: 1;
     pointer-events: auto;
-}
-
-.icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #000;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-}
-
-.icon-close i {
-    font-size: 32px;
-    color: #333;
 }
 
 .wrapper .logreg-box {
@@ -108,7 +157,7 @@ body {
 }
 
 .logreg-title p {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -126,7 +175,7 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 18px;
     color: #000;
     font-weight: 500;
     padding-right: 25px;
@@ -137,7 +186,7 @@ body {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 18px;
     color: #000;
     font-weight: 500;
     pointer-events: none;
@@ -149,17 +198,44 @@ body {
     top: -5px;
 }
 
+/*.label-username {
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+.anim-typewriter{
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+  }
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 24em;}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+  }  
+*/
+
 .input-box .icon {
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    font-size: 19px;
+    font-size: 20px;
     color: #000;
 }
 
 .logreg-box .remember-forgot {
-    font-size: 14.5px;
+    font-size: 18px;
     color: #000;
     font-weight: 500;
     margin: -15px 0 15px;
@@ -184,19 +260,26 @@ body {
 .logreg-box .btn {
     width: 100%;
     height: 45px;
-    background: #000;
+    /* background: #335151; */
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
     border: none;
     outline: none;
-    border-radius: 40px;
+    border-radius: 24px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
     cursor: pointer;
-    font-size: 16px;
-    color: #f3f3f3;
+    font-size: 18px;
+    color: #C0D1C2;
     font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.logreg-box .btn:hover {
+    background-color: #C0D1C2;
+    color: #000
 }
 
 .logreg-box .logreg-link {
-    font-size: 14.5px;
+    font-size: 18px;
     color: #000;
     text-align: center;
     font-weight: 500;
@@ -216,20 +299,20 @@ body {
 .media-options {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 .media-options a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 45%;
     height: 50px;
     background: transparent;
     border: 2px solid #000;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-    border-radius: 40px;
+    border-radius: 24px 0;
     color: #000;
     text-decoration: none;
     transition: .5s;
@@ -245,12 +328,19 @@ body {
 }
 
 .media-options a span {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
 }
 
 #error-message {
-    color: deeppink;
-    font-style: italic;
-    font-size: medium;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 24px 0;
+    color: rgb(255, 20, 83);
+    font-style: normal;
+    font-size: 20px;
+}
+
+#error-message i {
+    margin: 0 15px;
 }

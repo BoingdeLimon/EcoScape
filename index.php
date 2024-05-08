@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco Scapes 🍃</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/login.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="js/slider.js"></script>

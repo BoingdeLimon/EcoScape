@@ -13,7 +13,6 @@ if ($result->num_rows > 0) {
     // Usuario y contraseña válidos, establecer variable de sesión y redirigir a la página de inicio
     $_SESSION['username'] = $username;
     $response = array('success' => true);
-    // header("Location: home.php");
 } else {
     // Usuario o contraseña incorrectos, redirigir de nuevo a la página de inicio de sesión con un mensaje de error
     // header("Location: index.php?error=1");

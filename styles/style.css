@@ -298,10 +298,15 @@ header {
 
 
 header nav {
+  display: flex;
   position: fixed;  
+  align-items: center; 
+  justify-content: space-between;
   top: 0;           
   left: 0;         
   width: 100%;     
+  height: 60px; 
+  padding: 5px 5px; 
   z-index: 1000;   
   color: #000000;   
   padding: 5px 5px; 
@@ -333,6 +338,7 @@ header nav p {
   font-weight: bold;
   font-size: 1.5em;
   transition: text-shadow .6s ;
+  margin-right: 20px;
 }
   
 header nav p:hover {
@@ -340,18 +346,21 @@ header nav p:hover {
 }
 
 header nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 header nav ul li {
+  display: inline-block;
   margin: 0 15px;
   font-weight: 600;
   cursor: pointer;
 }
 
 header nav ul li:hover {
-  color: #f56c11;
+  color: #fff;
   transition: .4s;
 }
 
@@ -372,7 +381,6 @@ header nav ul li:hover {
   to {transform:   translateY(-20px);
       opacity: 1;}
 }
-  
 button {
   padding: 10px 15px;
   border-radius: 8px;

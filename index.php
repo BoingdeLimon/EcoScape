@@ -18,9 +18,9 @@
   <header>
     <nav>
       <div class="logo">
-        <img src="assets/logo2.png" alt="Logo" width="10%" height="100%">
+        <img src="assets/logo2.png" alt="Logo" width="auto" height="100%">
+        <p><a href="index.php">EcoScapes</a></p>
       </div>
-      <p><a href="index.php">EcoScapes</a></p>
 
       <ul>
         <li><a href="#slider"><i data-feather="home"></i></a></li>
@@ -31,14 +31,12 @@
           // require 'connection.php';
           session_start();
           if (isset($_SESSION['username'])) {
-            // echo '<li><a href="session.php"><i data-feather="user-check"></i></a>'.$_SESSION['username'].'</li>';
-            echo '<li><a href="session.php"><i data-feather="user-check"></i></a></li>';
+            echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
             echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
           } else {
             echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
           }
         ?>
-        <!-- <li><a href="session.php"><i data-feather="log-in"></i></a></li> -->
       </ul>
     </nav>
 

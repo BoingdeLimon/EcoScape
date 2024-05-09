@@ -5,11 +5,20 @@
   box-sizing: border-box;
   padding: 0;
 }
+
 .body-no-scroll {
   overflow: hidden;
   height: 100%; /* Fija la altura para evitar el desplazamiento vertical */
 }
 
+.slider {
+  position: relative;
+  width: 100%;
+  top: 20px; /* Debe ser igual a la altura del header */
+  height: calc(100vh - 120px); /* Ajusta la altura del slider para que tome el espacio restante */
+  overflow: hidden;
+  z-index: 100; /* Un valor menor que el de .modal */
+}
 
 .modal {
   display: none;
@@ -23,12 +32,6 @@
   background-color: rgba(0,0,0,0.4);
 }
 
-.slider {
-  position: relative;
-  z-index: 100; /* Un valor menor que el de .modal */
-}
-
-
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -38,34 +41,25 @@
   box-shadow: 0px 0px 4px -1px #222; /* Sombra similar a la de los cards */
   border-radius: 24px 0px; /* Bordes redondeados en la parte superior izquierda y en la inferior derecha */
   position: relative;
-  padding-top: 20px; /* Espacio para el botón de cierre */
+  padding-top: 5px; /* Espacio para el botón de cierre */
   display: flex;
   align-items: center;
   justify-content: center; /* Centrado del contenido */
-}
-
-.modal-content {
-  position: relative;
-  padding-top: 5px; /* Espacio para el botón de cierre */
 }
 
 .close {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 24px;
-  font-weight: bold;
   cursor: pointer;
-}
-
-.close:hover {
-  color: rgb(0, 0, 0);
-}
-.close {
   color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.close:hover {
+  color: rgb(0, 0, 0);
 }
 
 .close:hover,
@@ -80,10 +74,6 @@
   flex-direction: column;
   align-items: center;
 }
-.modal-content {
-  display: flex;
-  align-items: center;
-}
 
 .content-wrapper {
   display: flex;
@@ -93,6 +83,7 @@
 .gallery {
   flex: 1;
 }
+
 .main-image img {
   width: 100%;  /* Ajusta según sea necesario */
   height: auto;
@@ -103,6 +94,7 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
 .thumbnails img {
   width: 70px;  
   height: auto;
@@ -133,27 +125,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.slider {
-  position: relative;
-  width: 100%;
-  height: calc(88vh - 170px); /* Ajusta según necesites */
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 100%; /* Posiciona los slides fuera de la vista */
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: left 0.5s ease;
-}
-
-.slide.active {
-  left: 0; /* Muestra el slide activo */
-}
 
 .header-content {
   position: absolute;
@@ -161,38 +132,38 @@ a {
   left: 40%;
   transform: translate(-30%, -10%); /* Ajusta también el porcentaje de translate */
   width: 80%;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-}
-.header-content {
   background-color: transparent; /* Asegura que no hay fondo sólido */
   padding: 10px 20px; /* Reduce o ajusta el padding según sea necesario */
-  text-align: center; /* Centra el texto */
-  color: #fff; /* Asegura que el texto es blanco o el color deseado */
   box-shadow: none; /* Elimina el box-shadow si no lo necesitas */
   border: none; /* Elimina bordes */
   display: flex;
   flex-direction: column;
   align-items: center; /* Alinea los elementos al centro */
   justify-content: center; /* Centra verticalmente si es necesario */
-}
-
-h1, p {
-  margin: 10px 0; /* Ajusta el margen para separar adecuadamente el texto y el botón */
+  color: #fff;
+  font-weight: bold;
+  max-width: 400px;
+  margin: 150px auto;
+  text-align: center;
+  animation: ease text-move 4s forwards;
 }
 
 button {
-  background-color: #f56c11; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
-  border: none; /* Sin bordes */
-  padding: 10px 20px; /* Padding del botón */
-  border-radius: 8px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
   transition: background-color 0.3s; /* Transición suave del color de fondo */
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  border: 0;
+  cursor: pointer;
+  background-color: #f87c07;
+  color: #fff;
 }
+
+button:hover {
+  background-color: #e65300; /* Cambio de color al pasar el mouse */
+}
+
 buttondos {
   background-color: #000000; /* Color de fondo del botón */
   color: #fff; /* Color del texto del botón */
@@ -202,33 +173,33 @@ buttondos {
   cursor: pointer; /* Cursor de mano al pasar sobre el botón */
   transition: background-color 0.3s; /* Transición suave del color de fondo */
 }
-button:hover {
-  background-color: #e65300; /* Cambio de color al pasar el mouse */
-}
-
-
-
 
 .logo {
-  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
   height: 100%;
+}
 
+.logo p {
+  margin-inline-start: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: text-shadow .6s ;
+}
+
+.logo p:hover {
+  text-shadow: 12px 5px 15px #15bdbd;
 }
 
 header {
   position: relative; /* O 'fixed' si quieres que el header sea fijo en la parte superior */
   top: 0;
   width: 100%;
-  height: 20px; /* Ajusta esto según el alto de tu header */
   z-index: 1000;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  top: 20px; /* Debe ser igual a la altura del header */
-  height: calc(100vh - 120px); /* Ajusta la altura del slider para que tome el espacio restante */
-  overflow: hidden;
+  margin-top: -90px; 
+  height: calc(88vh - 170px); 
 }
 
 .slide {
@@ -246,56 +217,10 @@ header {
   left: 0; /* Muestra el slide activo */
 }
 
-.header-content {
-  position: absolute;
-  top: 10%; /* Ajusta este valor para subir el contenido un poco */
-  left: 40%;
-  transform: translate(-30%, -10%); /* Ajusta también el porcentaje de translate */
-  width: 80%;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-}
-
-.header-content {
-  background-color: transparent; /* Asegura que no hay fondo sólido */
-  padding: 10px 20px; /* Reduce o ajusta el padding según sea necesario */
-  text-align: center; /* Centra el texto */
-  color: #fff; /* Asegura que el texto es blanco o el color deseado */
-  box-shadow: none; /* Elimina el box-shadow si no lo necesitas */
-  border: none; /* Elimina bordes */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinea los elementos al centro */
-  justify-content: center; /* Centra verticalmente si es necesario */
-}
 
 h1, p {
   margin: 10px 0; /* Ajusta el margen para separar adecuadamente el texto y el botón */
 }
-
-button {
-  background-color: #f56c11; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
-  border: none; /* Sin bordes */
-  padding: 10px 20px; /* Padding del botón */
-  border-radius: 8px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-  transition: background-color 0.3s; /* Transición suave del color de fondo */
-}
-
-button:hover {
-  background-color: #e65300; /* Cambio de color al pasar el mouse */
-}
-
-header {
-  margin-top: -90px; 
-  height: calc(88vh - 170px); 
-  /* background: no-repeat center/cover url('/assets/marruecos.jpg'); */
-}
-
 
 header nav {
   display: flex;
@@ -305,44 +230,14 @@ header nav {
   top: 0;           
   left: 0;         
   width: 100%;     
-  height: 60px; 
-  padding: 5px 5px; 
+  height: 75px; 
   z-index: 1000;   
   color: #000000;   
   padding: 5px 5px; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  height: 75px; 
   background-image: linear-gradient(to right, #C0D1C2, #C0D1C2);
   border-bottom: 3px solid #C0D1C2; 
   border-radius: 0 0 10px 10px; 
-}
-  
-header nav {
-  border-bottom: 3px solid #C0D1C2; 
-  border-radius: 0 0 10px 10px; 
-}
-
-header nav ul li a:hover {
-  color: #ffffff;  
-}
-
-header nav ul li a:hover {
-  color: #ffffff;  
-}
-
-header nav p {
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.5em;
-  transition: text-shadow .6s ;
-  margin-right: 20px;
-}
-  
-header nav p:hover {
-  text-shadow: 0px 0px 10px #fff;
 }
 
 header nav ul {
@@ -364,15 +259,8 @@ header nav ul li:hover {
   transition: .4s;
 }
 
-
-.header-content {
-  color: #fff;
-  font-weight: bold;
-  max-width: 400px;
-  margin: 150px auto;
-  text-align: center;
-  animation: ease text-move 4s forwards;
-  
+header nav ul li a:hover {
+  color: #ffffff;  
 }
 
 @keyframes text-move{
@@ -380,16 +268,6 @@ header nav ul li:hover {
         opacity: 0;}
   to {transform:   translateY(-20px);
       opacity: 1;}
-}
-button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-family: 'Questrial', sans-serif;
-  border: 0;
-  cursor: pointer;
-  background-color: rgb(248, 124, 7);
-  color: #fff;
 }
 
 
@@ -400,7 +278,6 @@ button {
 }
 
 .pacotes .pacotes-cards {
-  /* background: #333; */
   margin: auto;
   max-width: 950px;
   display: flex;
@@ -415,7 +292,6 @@ button {
   padding: 15px;
   text-align: center;
 }
-
 
 .pacotes .card {
   margin: 25px;
@@ -480,7 +356,6 @@ button {
   box-shadow: 1px 2px 5px -2px #222;
 }
 
-
 .pacotes .card .card-tag-bottom {
   position: absolute;
   left: 0;
@@ -490,13 +365,12 @@ button {
   padding: 5px 10px;
   box-shadow: 1px 1px 4px 1px #222;
 }
+
 .pacotes .card .card-tag-bottomdos {
   position: absolute;
   right: 0;
   top: 400px;
-
   padding: 5px 10px;
- 
 }
 
 .pacotes .card .card-tag p {
@@ -570,7 +444,6 @@ button {
 }
 
 .contato {
-  /* padding: 60px; */
   background-color: #e1e8f7;
   position: relative;
 }
@@ -582,12 +455,9 @@ button {
   background: #fff;
   position: absolute;
   z-index: 99;
-
   border-radius: 8px;
-
   top: calc(50% - 150px);
   left: calc(20% - 170px);
-
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -603,7 +473,6 @@ button {
   font-size: .8rem;
   font-weight: bold;
   color: gray;
-  
   display: flex;
   align-items: center;
 }
@@ -612,8 +481,6 @@ button {
   width: 16px;
   margin: 10px;
 }
-
-/* RESPONSIVIDADE */
 
 /* Especial para Mapa */
 @media (max-width: 902px) {
@@ -672,6 +539,5 @@ button {
     width: 100%;
     text-align: center;
   }
-
-  
+ 
 }

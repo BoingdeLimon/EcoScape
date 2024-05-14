@@ -9,6 +9,43 @@
   overflow: hidden;
   height: 100%; /* Fija la altura para evitar el desplazamiento vertical */
 }
+.booking-details {
+  margin-top: 200px; /* Ajusta el margen entre la descripción y el formulario de reserva */
+}
+
+.description {
+  padding-bottom: 200px; /* Ajusta el espacio debajo de la descripción */
+}
+
+/* Ajustes para el formulario de reserva */
+.booking-details form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.booking-details label {
+  margin-bottom: 10px; /* Espacio entre las etiquetas y los campos de entrada */
+}
+
+.booking-details select,
+.booking-details input[type="number"] {
+  margin-bottom: 15px; /* Espacio entre los campos de entrada */
+}
+
+.booking-details button[type="submit"] {
+  background-color: #f56c11;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-details button[type="submit"]:hover {
+  background-color: #e65300; /* Cambia el color al pasar el ratón */
+}
 
 
 .modal {

@@ -1,25 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar todos los iconos feather
-    feather.replace();
+    feather.replace(); // Inicializa los iconos de Feather
 
-    // Manejar la apertura y cierre del modal
-    var modal = document.getElementById('modal');
-    var btn = document.getElementById('openModal');
-    var span = document.getElementsByClassName('close')[0];
+    // Función para abrir los modales
+    var modalButtons = document.querySelectorAll('.openModal');
+    modalButtons.forEach(function(btn) {
+        btn.onclick = function() {
+            var targetModal = this.getAttribute('data-target');
+            var modal = document.getElementById(targetModal);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        };
+    });
 
-    btn.onclick = function() {
-        modal.style.display = 'block';
-    }
+    // Funciones para cerrar los modales
+    var closeButtons = document.getElementsByClassName('close');
+    Array.from(closeButtons).forEach(function(btn) {
+        btn.onclick = function() {
+            var modal = this.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        };
+    });
 
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
+    // Función para cambiar la imagen principal del modal basado en las miniaturas
+    var thumbnails = document.querySelectorAll('.thumbnails img');
+    thumbnails.forEach(function(thumbnail) {
+        thumbnail.onclick = function() {
+            var mainImage = this.closest('.gallery').querySelector('.main-image img');
+            mainImage.src = this.src;  // Cambia el src de la imagen principal a la src de la miniatura clickeada
+        };
+    });
 
+    // Cierra los modales si el usuario hace clic fuera de ellos
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
         }
-    }
+    };
 
     // Scroll suave para anclas
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -32,6 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function changeImage(src) {
-    document.getElementById('mainImage').src = src;
-}
+

@@ -88,38 +88,58 @@
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-            <buttondos id="openModal"><i data-feather="maximize-2"></i></buttondos>
+          <button class="openModal" data-target="modal1"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
 
       <!-- Modal -->
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="content-wrapper">
-            <!-- Galería de imágenes integrada -->
-            <div id="gallery" class="gallery">
-              <!-- Imagen Principal -->
-              <div class="main-image">
-                <img src="assets/nepal/nepal1.jpg" alt="Producto Principal" id="mainImage">
-              </div>
-              <!-- Miniaturas o Imágenes Secundarias -->
-              <div class="thumbnails">
-                <img src="assets/nepal/nepal1.jpg" alt="Vista 1" onclick="changeImage('assets/nepal/nepal1.jpg')">
-                <img src="assets/nepal/nepal2.jpg" alt="Vista 2" onclick="changeImage('assets/nepal/nepal2.jpg')">
-                <img src="assets/nepal/nepal3.jpg" alt="Vista 3" onclick="changeImage('assets/nepal/nepal3.jpg')">
-                <img src="assets/nepal/nepal4.jpg" alt="Vista 4" onclick="changeImage('assets/nepal/nepal4.jpg')">
-              </div>
-            </div>
-            <!-- Descripción -->
-            <div class="description">
-              <h2>Viaje a Nepal</h2>
-              <p>Un viaje a Nepal es una experiencia envolvente que combina aventura, espiritualidad y una asombrosa diversidad natural y cultural. Desde las impresionantes alturas del Himalaya hasta las ricas planicies subtropicales, este país ofrece un mosaico de atracciones que cautivan a cualquier viajero.</p>
-            </div>
-          </div>
+      <div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="content-wrapper">
+      <!-- Galería de imágenes integrada -->
+      <div id="gallery" class="gallery">
+        <!-- Imagen Principal -->
+        <div class="main-image">
+          <img src="assets/nepal/nepal1.jpg" alt="Producto Principal" id="mainImage">
+        </div>
+        <!-- Miniaturas o Imágenes Secundarias -->
+        <div class="thumbnails">
+          <img src="assets/nepal/nepal1.jpg" alt="Vista 1" onclick="changeImage('assets/nepal/nepal1.jpg')">
+          <img src="assets/nepal/nepal2.jpg" alt="Vista 2" onclick="changeImage('assets/nepal/nepal2.jpg')">
+          <img src="assets/nepal/nepal3.jpg" alt="Vista 3" onclick="changeImage('assets/nepal/nepal3.jpg')">
+          <img src="assets/nepal/nepal4.jpg" alt="Vista 4" onclick="changeImage('assets/nepal/nepal4.jpg')">
         </div>
       </div>
+      <!-- Descripción -->
+      <div class="description">
+        <h2>Viaje a Nepal</h2>
+        <p>Un viaje a Nepal es una experiencia envolvente que combina aventura, espiritualidad y una asombrosa diversidad natural y cultural. Desde las impresionantes alturas del Himalaya hasta las ricas planicies subtropicales, este país ofrece un mosaico de atracciones que cautivan a cualquier viajero.</p>
+      </div>
+      <!-- Apartado para ingresar personas y seleccionar fechas -->
+      <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">1 Junio 2024</option>
+            <option value="2024-07-15">15 Julio 2024</option>
+            <option value="2024-08-20">20 Agosto 2024</option>
+            <option value="2024-09-10">10 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
       <div class="card">
         <div class="card-tag card-tag-top">
@@ -136,8 +156,56 @@
             <li><i data-feather="wifi"></i>Wi-Fi</li>
             <li><i data-feather="map"></i>Tour incluido</li>
           </ul>
+          <div class="card-tag card-tag-bottomdos">
+          <button class="openModal" data-target="modal2"><i data-feather="maximize-2"></i></button>
+          </div>
         </div>
       </div>
+       <!-- Modal2 -->
+       <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/senegal/senegal1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/senegal/senegal1.jpg" alt="Vista 1" onclick="changeImage('assets/senegal/senegal1.jpg', 'mainImage1')">
+                <img src="assets/senegal/senegal2.jpg" alt="Vista 2" onclick="changeImage('assets/senegal/senegal2.jpg', 'mainImage1')">
+                <img src="assets/senegal/senegal3.jpg" alt="Vista 3" onclick="changeImage('assets/senegal/senegal3.jpg', 'mainImage1')">
+                <img src="assets/senegal/senegal4.jpg" alt="Vista 4" onclick="changeImage('assets/senegal/senegal4.jpg', 'mainImage1')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje a Senegal</h2>
+              <p>Un viaje a Senegal es una experiencia enriquecedora que combina sostenibilidad, cultura y naturaleza. Desde la vibrante vida urbana de Dakar hasta las tranquilas playas de Saly y los ecosistemas protegidos del delta del Saloum, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural y diversidad cultural.</p>
+            </div>
+            <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">10 Junio 2024</option>
+            <option value="2024-07-15">17 Julio 2024</option>
+            <option value="2024-08-20">30 Agosto 2024</option>
+            <option value="2024-09-10">5 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+
 
       <div class="card">
         <div class="card-tag card-tag-top">
@@ -154,9 +222,56 @@
             <li><i data-feather="wifi"></i>Wi-Fi</li>
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
+          <div class="card-tag card-tag-bottomdos">
+          <button class="openModal" data-target="modal3"><i data-feather="maximize-2"></i></button>
+          </div>
         </div>
       </div>
+<!-- Modal-3 -->
+<div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/marruecos/marruecos1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/marruecos/marruecos1.jpg" alt="Vista 1" onclick="changeImage('assets/marruecos/marruecos1.jpg')">
+                <img src="assets/marruecos/marruecos2.jpg" alt="Vista 2" onclick="changeImage('assets/marruecos/marruecos2.jpg')">
+                <img src="assets/marruecos/marruecos3.jpg" alt="Vista 3" onclick="changeImage('assets/marruecos/marruecos3.jpg')">
+                <img src="assets/marruecos/marruecos4.jpg" alt="Vista 4" onclick="changeImage('assets/marruecos/marruecos4.jpg')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje a Marruecos</h2>
+              <p>
+              Un viaje a Marruecos es una experiencia única que combina sostenibilidad, cultura y naturaleza. Desde los vibrantes mercados de Marrakech hasta las majestuosas montañas del Atlas y los tranquilos paisajes del desierto de Agafay, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural.
+              </p>
+            </div>
+            <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">11 Junio 2024</option>
+            <option value="2024-07-15">15 Julio 2024</option>
+            <option value="2024-08-20">29 Agosto 2024</option>
+            <option value="2024-09-10">14 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+          </div>
+        </div>
+      </div>
       <div class="card">
         <div class="card-tag card-tag-top">
           <p>Promoción</p>
@@ -172,9 +287,54 @@
             <li><i data-feather="wifi"></i>Wi-Fi</li>
             <li><i data-feather="map"></i>Paseo en buggy</li>
           </ul>
+          <div class="card-tag card-tag-bottomdos">
+          <button class="openModal" data-target="modal4"><i data-feather="maximize-2"></i></button>
+          </div>
         </div>
       </div>
+<!-- Modal-4 -->
+<div id="modal4" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/cabos/cabos1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/cabos/cabos1.jpg" alt="Vista 1" onclick="changeImage('assets/cabos/cabos1.jpg')">
+                <img src="assets/cabos/cabos2.jpg" alt="Vista 2" onclick="changeImage('assets/cabos/cabos2.jpg')">
+                <img src="assets/cabos/cabos3.jpg" alt="Vista 3" onclick="changeImage('assets/cabos/cabos3.jpg')">
+                <img src="assets/cabos/cabos4.jpg" alt="Vista 4" onclick="changeImage('assets/cabos/cabos4.jpg')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje a Los Cabos</h2>
+<p>Un viaje a Los Cabos es una experiencia inolvidable que combina aventura, lujo y naturaleza. Desde las impresionantes playas y formaciones rocosas de El Arco hasta las vibrantes actividades acuáticas y la rica vida marina del Mar de Cortés, este destino ofrece una mezcla perfecta de relajación y emoción en un entorno de belleza natural espectacular.</p>
+            </div>
+            <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">1 Junio 2024</option>
+            <option value="2024-07-15">19 Julio 2024</option>
+            <option value="2024-08-20">26 Agosto 2024</option>
+            <option value="2024-09-10">12 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+          </div>
+        </div>
+      </div>
       <div class="card">
         <div class="card-tag card-tag-top">
           <p>Promoción</p>
@@ -190,6 +350,53 @@
             <li><i data-feather="wifi"></i>Wi-Fi</li>
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
+          <div class="card-tag card-tag-bottomdos">
+          <button class="openModal" data-target="modal5"><i data-feather="maximize-2"></i></button>
+          </div>
+        </div>
+       
+      </div>
+       <!-- Modal-5 -->
+      <div id="modal5" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/japon/japon1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/japon/japon1.jpg" alt="Vista 1" onclick="changeImage('assets/japon/japon1.jpg')">
+                <img src="assets/japon/japon2.jpg" alt="Vista 2" onclick="changeImage('assets/japon/japon2.jpg')">
+                <img src="assets/japon/japon3.jpg" alt="Vista 3" onclick="changeImage('assets/japon/japon3.jpg')">
+                <img src="assets/japon/japon4.jpg" alt="Vista 4" onclick="changeImage('assets/japon/japon4.jpg')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje a Japón</h2>
+<p>Un viaje a Japón es una experiencia fascinante que combina tradición, modernidad y una increíble diversidad natural. Desde los templos históricos y jardines tranquilos de Kioto hasta la vibrante vida urbana de Tokio y los paisajes impresionantes del Monte Fuji, este país ofrece un mosaico de atracciones culturales y naturales que cautivan a cualquier viajero.</p>
+            </div>
+            <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">8 Junio 2024</option>
+            <option value="2024-07-15">5 Julio 2024</option>
+            <option value="2024-08-20">2 Agosto 2024</option>
+            <option value="2024-09-10">1 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+          </div>
         </div>
       </div>
 
@@ -209,6 +416,52 @@
             <li><i data-feather="wifi"></i>Wi-Fi</li>
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
+          <div class="card-tag card-tag-bottomdos">
+          <button class="openModal" data-target="modal6"><i data-feather="maximize-2"></i></button>
+          </div>
+        </div>
+      </div>
+         <!-- Modal-6 -->
+         <div id="modal6" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/cañon/cañon1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/cañon/cañon1.jpg" alt="Vista 1" onclick="changeImage('assets/cañon/cañon1.jpg')">
+                <img src="assets/cañon/cañon2.jpg" alt="Vista 2" onclick="changeImage('assets/cañon/cañon2.jpg')">
+                <img src="assets/cañon/cañon3.jpg" alt="Vista 3" onclick="changeImage('assets/cañon/cañon3.jpg')">
+                <img src="assets/cañon/cañon4.jpg" alt="Vista 4" onclick="changeImage('assets/cañon/cañon4.jpg')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje al Gran Cañon</h2>
+              <p>Un viaje al Gran Cañón es una experiencia impresionante que combina aventura, geología y naturaleza. Desde las majestuosas vistas de sus acantilados y formaciones rocosas hasta las emocionantes rutas de senderismo y el sereno descenso por el río Colorado, este destino ofrece una inmersión en uno de los paisajes naturales más espectaculares del mundo.</p>
+            </div>
+            <div class="booking-details">
+        <form id="bookingForm">
+          <label for="numPersons">Número de personas:</label>
+          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+
+          <label for="selectDate">Fechas disponibles:</label>
+          <select id="selectDate" name="selectDate" required>
+            <option value="2024-06-01">15 Junio 2024</option>
+            <option value="2024-07-15">6 Julio 2024</option>
+            <option value="2024-08-20">20 Agosto 2024</option>
+            <option value="2024-09-10">5 Septiembre 2024</option>
+          </select>
+
+          <button type="submit">Reservar</button>
+        </form>
+      </div>
+          </div>
         </div>
   </section>
   </div>

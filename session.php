@@ -91,7 +91,7 @@
               <p>Already have an account ? <a href="#" class="login-link">Login</a></p>
             </div>
           </form>
-          <div id="error-message" style="display: none;"></div>
+          <div id="signup-error-message" style="display: none;"></div>
         </div>
       </div>
 
@@ -107,7 +107,7 @@
       </div>
     </div>
   </section>
-  <script src="js/script.js"></script>
+♦  <script src="js/script.js"></script>
 </body>
 
 </html>

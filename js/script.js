@@ -57,7 +57,7 @@ document.getElementById("signup-form").addEventListener("submit", function (even
                 window.location.href = "index.php";
             } else {
                 // Mostrar mensaje de error si el inicio de sesión falla
-                var message = document.getElementById("error-message");
+                var message = document.getElementById("signup-error-message");
                 message.style.display = "block";
                 message.textContent = response.message;
                 var icon = document.createElement("i");

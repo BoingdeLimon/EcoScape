@@ -15,18 +15,16 @@ try {
         session_start();
         $_SESSION['username'] = $username;
         $response = array('success' => true);
-        echo json_encode($response);
     } else {
         // If the credentials are not valid, display an error message
         // header("Location: index.php?rerror=1");
-        $response = array('success' => false, 'message' => 'Error registrando usuario: '.$conn->error);
-        echo json_encode($response);
+        $response = array('success' => false, 'message' => 'Error registrando usuario: ' . $conn->error);
     }
 } catch (mysqli_sql_exception $e) {
-    $response = array('success' => false, 'message' => 'Error registrando usuario (El email ya existe)');
-    echo json_encode($response);
+    $response = array('success' => false, 'message' => 'Error: ' . $e->getMessage());
 }
 
+echo json_encode($response);
 $conn->close();
 exit;
 ?>

@@ -45,14 +45,15 @@
         <div class="header-content">
           <h1>Marruecos</h1>
           <p>Viaje a Marruecos. En familia. En grupo. Cultura y naturaleza en el corazón del Rif</p>
-          <button>Saber Mas</button>
+          <button class="openModal" data-target="modal3">Saber más</button>
+
         </div>
       </div>
       <div class="slide" style="background-image: url('http://localhost/EcoScape/assets/cabos.jpg');">
         <div class="header-content">
           <h1>Los Cabos</h1>
           <p>7 días en los Cabos.</p>
-          <button>Saber Mas</button>
+          <button class="openModal" data-target="modal4">Saber más</button>
         </div>
       </div>
       <div class="slide" style="background-image: url('http://localhost/EcoScape/assets/canon.jpg');">
@@ -60,7 +61,7 @@
           <h1>Gran Cañon</h1>
           <p>Paquete de 14 días en el Gran Cañon
           </p>
-          <button><a href="#canon">Saber Mas</button>
+          <button class="openModal" data-target="modal6">Saber más</button>
         </div>
       </div>
     </div>
@@ -474,6 +475,7 @@
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
         </div>
         <button>Saber más</button>
+        
       </div>
 
       <div class="card">

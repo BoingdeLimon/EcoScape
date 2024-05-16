@@ -12,11 +12,12 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Usuario y contraseña válidos, establecer variable de sesión y redirigir a la página de inicio
     session_start();
-    $_SESSION['username'] = $username;
+    $row = $result->fetch_assoc();
+    $_SESSION['id'] = $row['id'];
+    $_SESSION['username'] = $row['username'];
     $response = array('success' => true);
 } else {
     // Usuario o contraseña incorrectos, redirigir de nuevo a la página de inicio de sesión con un mensaje de error
-    // header("Location: index.php?error=1");
     $response = array('success' => false, 'message' => 'Usuario o contraseña incorrectos');
 }
 

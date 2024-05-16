@@ -15,7 +15,6 @@ loginLink.onclick = () => {
 
 document.getElementById("login-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto
-
     var formData = new FormData(this); // Obtener los datos del formulario
 
     // Enviar la solicitud AJAX
@@ -43,7 +42,6 @@ document.getElementById("login-form").addEventListener("submit", function (event
 
 document.getElementById("signup-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto
-
     var formData = new FormData(this); // Obtener los datos del formulario
 
     // Enviar la solicitud AJAX

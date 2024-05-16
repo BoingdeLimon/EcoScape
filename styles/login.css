@@ -11,9 +11,7 @@ body {
 .logo-container {
     position: relative;
     width: 600px;
-    /* Ancho del logo */
     height: auto;
-    /* Altura del logo */
     margin: 0 auto;
 }
 

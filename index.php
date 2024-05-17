@@ -34,7 +34,7 @@ $isAuthenticated = isset($_SESSION['username']);
         <li><a href="#contato"><i data-feather="user"></i></a></li>
         <?php
           // require 'connection.php';
-          session_start();
+       
           if (isset($_SESSION['username'])) {
             echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
             echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
@@ -483,28 +483,29 @@ $isAuthenticated = isset($_SESSION['username']);
         <i data-feather="map"></i>
         <div class="card-content">
           <h3>Tour guiados</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <p>Explora destinos fascinantes con la comodidad de un guía experto.</p>
         </div>
-        <button>Saber más</button>
-
+       
       </div>
 
       <div class="card">
         <i data-feather="camera"></i>
         <div class="card-content">
           <h3>Fotográfia Profesional</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <p> Captura cada momento especial de tu viaje con la ayuda de nuestros fotógrafos profesionales.
+
+</p>
         </div>
-        <button>Saber más</button>
+        
       </div>
 
       <div class="card">
         <i data-feather="navigation"></i>
         <div class="card-content">
           <h3>Alquiler de vehículos</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <p>Viaja a tu propio ritmo con nuestro servicio de alquiler de vehículos.</p>
         </div>
-        <button>Saber más</button>
+     
       </div>
     </div>
   </section>

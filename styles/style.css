@@ -5,6 +5,29 @@
   box-sizing: border-box;
   padding: 0;
 }
+/* styles.css */
+
+/* Estilos para el campo de búsqueda */
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px; /* Ancho deseado */
+  height: 10px;
+}
+
+/* Estilos para el texto del placeholder */
+#searchInput::placeholder {
+  color: #999; /* Color del texto del placeholder */
+}
+
+/* Estilos cuando el campo de búsqueda está enfocado */
+#searchInput:focus {
+  outline: none; /* Eliminar el contorno de enfoque */
+  border-color: #66afe9; /* Color del borde cuando está enfocado */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Sombra cuando está enfocado */
+}
 
 .body-no-scroll {
   overflow: hidden;

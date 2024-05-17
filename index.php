@@ -27,6 +27,7 @@
         <li><a href="#pacotes"><i data-feather="package"></i></a></li>
         <li><a href="#servicos"><i data-feather="camera"></i></a></li>
         <li><a href="#contato"><i data-feather="user"></i></a></li>
+       
         <?php
           // require 'connection.php';
           session_start();
@@ -37,6 +38,13 @@
             echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
           }
         ?>
+         <li>
+                <input type="text" id="searchInput" placeholder="Buscar paquete...">
+                <a href="#pacotes" onclick="searchPackage()">Buscar</a>
+
+              </li>
+       
+
       </ul>
     </nav>
 
@@ -465,6 +473,28 @@
   </section>
   </div>
   </section>
+  <script>
+      function searchPackage() {
+  // Obtener el valor del campo de búsqueda
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+  // Obtener todas las tarjetas de paquetes
+  const packageCards = document.querySelectorAll('.card');
+
+  // Recorrer todas las tarjetas y ocultar/mostrar según coincida con la búsqueda
+  packageCards.forEach(card => {
+    const packageName = card.querySelector('.card-content h1').innerText.toLowerCase();
+
+    // Comprobar si el nombre del paquete incluye el término de búsqueda
+    if (packageName.includes(searchInput)) {
+      card.style.display = 'block'; // Mostrar el paquete
+    } else {
+      card.style.display = 'none'; // Ocultar el paquete
+    }
+  });
+}
+
+            </script>
   <section id="servicos" class="servicos">
     <h1 class="servicos-title">Servicios</h1>
     <div class="servicos-cards">
@@ -510,7 +540,7 @@
     <!--The div element for the map -->
     <div id="map"></div>
   </section>
-
+ 
 
   <script>
     // feather icons

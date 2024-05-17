@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isAuthenticated = isset($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +32,6 @@
         <li><a href="#pacotes"><i data-feather="package"></i></a></li>
         <li><a href="#servicos"><i data-feather="camera"></i></a></li>
         <li><a href="#contato"><i data-feather="user"></i></a></li>
-       
         <?php
           // require 'connection.php';
           session_start();
@@ -35,16 +39,10 @@
             echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
             echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
           } else {
-            echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
+            userLinks.innerHTML = `<a href="session.php"><i data-feather="log-in"></i></a>`;
+            logout.style.display = 'none';
           }
         ?>
-        <li>
-                <input type="text" id="searchInput" placeholder="Buscar paquete...">
-                <a href="#pacotes" onclick="searchPackage()">Buscar</a>
-
-              </li>
-       
-
       </ul>
     </nav>
 
@@ -95,58 +93,56 @@
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal1"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal1"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
 
       <!-- Modal -->
       <div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="content-wrapper">
-      <!-- Galería de imágenes integrada -->
-      <div id="gallery" class="gallery">
-        <!-- Imagen Principal -->
-        <div class="main-image">
-          <img src="assets/nepal/nepal1.jpg" alt="Producto Principal" id="mainImage">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="content-wrapper">
+            <!-- Galería de imágenes integrada -->
+            <div id="gallery" class="gallery">
+              <!-- Imagen Principal -->
+              <div class="main-image">
+                <img src="assets/nepal/nepal1.jpg" alt="Producto Principal" id="mainImage">
+              </div>
+              <!-- Miniaturas o Imágenes Secundarias -->
+              <div class="thumbnails">
+                <img src="assets/nepal/nepal1.jpg" alt="Vista 1" onclick="changeImage('assets/nepal/nepal1.jpg')">
+                <img src="assets/nepal/nepal2.jpg" alt="Vista 2" onclick="changeImage('assets/nepal/nepal2.jpg')">
+                <img src="assets/nepal/nepal3.jpg" alt="Vista 3" onclick="changeImage('assets/nepal/nepal3.jpg')">
+                <img src="assets/nepal/nepal4.jpg" alt="Vista 4" onclick="changeImage('assets/nepal/nepal4.jpg')">
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="description">
+              <h2>Viaje a Nepal</h2>
+              <p>Un viaje a Nepal es una experiencia envolvente que combina aventura, espiritualidad y una asombrosa diversidad natural y cultural. Desde las impresionantes alturas del Himalaya hasta las ricas planicies subtropicales, este país ofrece un mosaico de atracciones que cautivan a cualquier viajero.</p>
+            </div>
+            <!-- Apartado para ingresar personas y seleccionar fechas -->
+            <div class="booking-details">
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">1 Junio 2024</option>
+                  <option value="2024-07-15">15 Julio 2024</option>
+                  <option value="2024-08-20">20 Agosto 2024</option>
+                  <option value="2024-09-10">10 Septiembre 2024</option>
+                </select>
+
+                <button type="submit">Reservar</button>
+              </form>
+              <div id="message" style="display: none;"></div>
+            </div>
+          </div>
         </div>
-        <!-- Miniaturas o Imágenes Secundarias -->
-        <div class="thumbnails">
-          <img src="assets/nepal/nepal1.jpg" alt="Vista 1" onclick="changeImage('assets/nepal/nepal1.jpg')">
-          <img src="assets/nepal/nepal2.jpg" alt="Vista 2" onclick="changeImage('assets/nepal/nepal2.jpg')">
-          <img src="assets/nepal/nepal3.jpg" alt="Vista 3" onclick="changeImage('assets/nepal/nepal3.jpg')">
-          <img src="assets/nepal/nepal4.jpg" alt="Vista 4" onclick="changeImage('assets/nepal/nepal4.jpg')">
-        </div>
       </div>
-      <!-- Descripción -->
-      <div class="description">
-        <h2>Viaje a Nepal</h2>
-        <p>Un viaje a Nepal es una experiencia envolvente que combina aventura, espiritualidad y una asombrosa diversidad natural y cultural. Desde las impresionantes alturas del Himalaya hasta las ricas planicies subtropicales, este país ofrece un mosaico de atracciones que cautivan a cualquier viajero.</p>
-      </div>
-      <!-- Apartado para ingresar personas y seleccionar fechas -->
-      <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
-
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">1 Junio 2024</option>
-            <option value="2024-07-15">15 Julio 2024</option>
-            <option value="2024-08-20">20 Agosto 2024</option>
-            <option value="2024-09-10">10 Septiembre 2024</option>
-          </select>
-
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
       <div class="card">
         <div class="card-tag card-tag-top">
@@ -164,12 +160,12 @@
             <li><i data-feather="map"></i>Tour incluido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal2"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal2"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
-       <!-- Modal2 -->
-       <div id="modal2" class="modal">
+      <!-- Modal2 -->
+      <div id="modal2" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="content-wrapper">
@@ -193,22 +189,22 @@
               <p>Un viaje a Senegal es una experiencia enriquecedora que combina sostenibilidad, cultura y naturaleza. Desde la vibrante vida urbana de Dakar hasta las tranquilas playas de Saly y los ecosistemas protegidos del delta del Saloum, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural y diversidad cultural.</p>
             </div>
             <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">10 Junio 2024</option>
-            <option value="2024-07-15">17 Julio 2024</option>
-            <option value="2024-08-20">30 Agosto 2024</option>
-            <option value="2024-09-10">5 Septiembre 2024</option>
-          </select>
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">10 Junio 2024</option>
+                  <option value="2024-07-15">17 Julio 2024</option>
+                  <option value="2024-08-20">30 Agosto 2024</option>
+                  <option value="2024-09-10">5 Septiembre 2024</option>
+                </select>
 
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
-            
+                <button type="submit">Reservar</button>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
@@ -230,12 +226,12 @@
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal3"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal3"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
-<!-- Modal-3 -->
-<div id="modal3" class="modal">
+      <!-- Modal-3 -->
+      <div id="modal3" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="content-wrapper">
@@ -257,25 +253,25 @@
             <div class="description">
               <h2>Viaje a Marruecos</h2>
               <p>
-              Un viaje a Marruecos es una experiencia única que combina sostenibilidad, cultura y naturaleza. Desde los vibrantes mercados de Marrakech hasta las majestuosas montañas del Atlas y los tranquilos paisajes del desierto de Agafay, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural.
+                Un viaje a Marruecos es una experiencia única que combina sostenibilidad, cultura y naturaleza. Desde los vibrantes mercados de Marrakech hasta las majestuosas montañas del Atlas y los tranquilos paisajes del desierto de Agafay, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural.
               </p>
             </div>
             <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">11 Junio 2024</option>
-            <option value="2024-07-15">15 Julio 2024</option>
-            <option value="2024-08-20">29 Agosto 2024</option>
-            <option value="2024-09-10">14 Septiembre 2024</option>
-          </select>
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">11 Junio 2024</option>
+                  <option value="2024-07-15">15 Julio 2024</option>
+                  <option value="2024-08-20">29 Agosto 2024</option>
+                  <option value="2024-09-10">14 Septiembre 2024</option>
+                </select>
 
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
+                <button type="submit">Reservar</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -295,12 +291,12 @@
             <li><i data-feather="map"></i>Paseo en buggy</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal4"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal4"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
-<!-- Modal-4 -->
-<div id="modal4" class="modal">
+      <!-- Modal-4 -->
+      <div id="modal4" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="content-wrapper">
@@ -321,24 +317,24 @@
             <!-- Descripción -->
             <div class="description">
               <h2>Viaje a Los Cabos</h2>
-<p>Un viaje a Los Cabos es una experiencia inolvidable que combina aventura, lujo y naturaleza. Desde las impresionantes playas y formaciones rocosas de El Arco hasta las vibrantes actividades acuáticas y la rica vida marina del Mar de Cortés, este destino ofrece una mezcla perfecta de relajación y emoción en un entorno de belleza natural espectacular.</p>
+              <p>Un viaje a Los Cabos es una experiencia inolvidable que combina aventura, lujo y naturaleza. Desde las impresionantes playas y formaciones rocosas de El Arco hasta las vibrantes actividades acuáticas y la rica vida marina del Mar de Cortés, este destino ofrece una mezcla perfecta de relajación y emoción en un entorno de belleza natural espectacular.</p>
             </div>
             <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">1 Junio 2024</option>
-            <option value="2024-07-15">19 Julio 2024</option>
-            <option value="2024-08-20">26 Agosto 2024</option>
-            <option value="2024-09-10">12 Septiembre 2024</option>
-          </select>
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">1 Junio 2024</option>
+                  <option value="2024-07-15">19 Julio 2024</option>
+                  <option value="2024-08-20">26 Agosto 2024</option>
+                  <option value="2024-09-10">12 Septiembre 2024</option>
+                </select>
 
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
+                <button type="submit">Reservar</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -358,12 +354,12 @@
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal5"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal5"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
-       
+
       </div>
-       <!-- Modal-5 -->
+      <!-- Modal-5 -->
       <div id="modal5" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -385,24 +381,24 @@
             <!-- Descripción -->
             <div class="description">
               <h2>Viaje a Japón</h2>
-<p>Un viaje a Japón es una experiencia fascinante que combina tradición, modernidad y una increíble diversidad natural. Desde los templos históricos y jardines tranquilos de Kioto hasta la vibrante vida urbana de Tokio y los paisajes impresionantes del Monte Fuji, este país ofrece un mosaico de atracciones culturales y naturales que cautivan a cualquier viajero.</p>
+              <p>Un viaje a Japón es una experiencia fascinante que combina tradición, modernidad y una increíble diversidad natural. Desde los templos históricos y jardines tranquilos de Kioto hasta la vibrante vida urbana de Tokio y los paisajes impresionantes del Monte Fuji, este país ofrece un mosaico de atracciones culturales y naturales que cautivan a cualquier viajero.</p>
             </div>
             <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">8 Junio 2024</option>
-            <option value="2024-07-15">5 Julio 2024</option>
-            <option value="2024-08-20">2 Agosto 2024</option>
-            <option value="2024-09-10">1 Septiembre 2024</option>
-          </select>
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">8 Junio 2024</option>
+                  <option value="2024-07-15">5 Julio 2024</option>
+                  <option value="2024-08-20">2 Agosto 2024</option>
+                  <option value="2024-09-10">1 Septiembre 2024</option>
+                </select>
 
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
+                <button type="submit">Reservar</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -424,12 +420,12 @@
             <li><i data-feather="map"></i>Recorrido</li>
           </ul>
           <div class="card-tag card-tag-bottomdos">
-          <button class="openModal" data-target="modal6"><i data-feather="maximize-2"></i></button>
+            <button class="openModal" data-target="modal6"><i data-feather="maximize-2"></i></button>
           </div>
         </div>
       </div>
-         <!-- Modal-6 -->
-         <div id="modal6" class="modal">
+      <!-- Modal-6 -->
+      <div id="modal6" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="content-wrapper">
@@ -453,21 +449,21 @@
               <p>Un viaje al Gran Cañón es una experiencia impresionante que combina aventura, geología y naturaleza. Desde las majestuosas vistas de sus acantilados y formaciones rocosas hasta las emocionantes rutas de senderismo y el sereno descenso por el río Colorado, este destino ofrece una inmersión en uno de los paisajes naturales más espectaculares del mundo.</p>
             </div>
             <div class="booking-details">
-        <form id="bookingForm">
-          <label for="numPersons">Número de personas:</label>
-          <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
+              <form id="bookingForm">
+                <label for="numPersons">Número de personas:</label>
+                <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
-          <label for="selectDate">Fechas disponibles:</label>
-          <select id="selectDate" name="selectDate" required>
-            <option value="2024-06-01">15 Junio 2024</option>
-            <option value="2024-07-15">6 Julio 2024</option>
-            <option value="2024-08-20">20 Agosto 2024</option>
-            <option value="2024-09-10">5 Septiembre 2024</option>
-          </select>
+                <label for="selectDate">Fechas disponibles:</label>
+                <select id="selectDate" name="selectDate" required>
+                  <option value="2024-06-01">15 Junio 2024</option>
+                  <option value="2024-07-15">6 Julio 2024</option>
+                  <option value="2024-08-20">20 Agosto 2024</option>
+                  <option value="2024-09-10">5 Septiembre 2024</option>
+                </select>
 
-          <button type="submit">Reservar</button>
-        </form>
-      </div>
+                <button type="submit">Reservar</button>
+              </form>
+            </div>
           </div>
         </div>
   </section>
@@ -484,7 +480,7 @@
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
         </div>
         <button>Saber más</button>
-        
+
       </div>
 
       <div class="card">
@@ -577,8 +573,8 @@
     }
   </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  <script src="js/paquete.js"></script>
 </body>
 
 </html>

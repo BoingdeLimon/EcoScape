@@ -34,15 +34,12 @@ $isAuthenticated = isset($_SESSION['username']);
         <li><a href="#contato"><i data-feather="user"></i></a></li>
         <?php
           // require 'connection.php';
-          session_start();
-          if (isset($_SESSION['username'])) {
-            echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
-            echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
-          } else {
-            userLinks.innerHTML = `<a href="session.php"><i data-feather="log-in"></i></a>`;
-            logout.style.display = 'none';
-          }
+        
         ?>
+         <li>  <input type="text" id="searchInput" placeholder="Buscar paquete...">
+                <a href="#pacotes" onclick="searchPackage()">Buscar</a></li>
+
+       
       </ul>
     </nav>
 

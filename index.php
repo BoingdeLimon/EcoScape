@@ -33,21 +33,19 @@ $isAuthenticated = isset($_SESSION['username']);
         <li><a href="#servicos"><i data-feather="camera"></i></a></li>
         <li><a href="#contato"><i data-feather="user"></i></a></li>
         <?php
-          // require 'connection.php';
-       
-          if (isset($_SESSION['username'])) {
-            echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
-            echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
-          } else {
-            echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
-          }
+        if (isset($_SESSION['username'])) {
+          echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
+          echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
+        } else {
+          echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
+        }
         ?>
         <li>
-                <input type="text" id="searchInput" placeholder="Buscar paquete...">
-                <a href="#pacotes" onclick="searchPackage()">Buscar</a>
+          <input type="text" id="searchInput" placeholder="Buscar paquete...">
+          <a href="#pacotes" onclick="searchPackage()">Buscar</a>
 
-              </li>
-       
+        </li>
+
 
       </ul>
     </nav>
@@ -130,7 +128,7 @@ $isAuthenticated = isset($_SESSION['username']);
             </div>
             <!-- Apartado para ingresar personas y seleccionar fechas -->
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="1">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -144,7 +142,7 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
-              <div id="message" style="display: none;"></div>
+              <div id="message1" style="display: none;"></div>
             </div>
           </div>
         </div>
@@ -195,7 +193,7 @@ $isAuthenticated = isset($_SESSION['username']);
               <p>Un viaje a Senegal es una experiencia enriquecedora que combina sostenibilidad, cultura y naturaleza. Desde la vibrante vida urbana de Dakar hasta las tranquilas playas de Saly y los ecosistemas protegidos del delta del Saloum, este viaje ofrece una inmersión en prácticas ecológicas y el apoyo a comunidades locales, todo en un entorno de impresionante belleza natural y diversidad cultural.</p>
             </div>
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="2">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -209,6 +207,7 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
+              <div id="message2" style="display: none;"></div>
             </div>
 
           </div>
@@ -263,7 +262,7 @@ $isAuthenticated = isset($_SESSION['username']);
               </p>
             </div>
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="3">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -277,6 +276,7 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
+              <div id="message3" style="display: none;"></div>
             </div>
           </div>
         </div>
@@ -326,7 +326,7 @@ $isAuthenticated = isset($_SESSION['username']);
               <p>Un viaje a Los Cabos es una experiencia inolvidable que combina aventura, lujo y naturaleza. Desde las impresionantes playas y formaciones rocosas de El Arco hasta las vibrantes actividades acuáticas y la rica vida marina del Mar de Cortés, este destino ofrece una mezcla perfecta de relajación y emoción en un entorno de belleza natural espectacular.</p>
             </div>
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="4">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -340,6 +340,7 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
+              <div id="message4" style="display: none;"></div>
             </div>
           </div>
         </div>
@@ -390,7 +391,7 @@ $isAuthenticated = isset($_SESSION['username']);
               <p>Un viaje a Japón es una experiencia fascinante que combina tradición, modernidad y una increíble diversidad natural. Desde los templos históricos y jardines tranquilos de Kioto hasta la vibrante vida urbana de Tokio y los paisajes impresionantes del Monte Fuji, este país ofrece un mosaico de atracciones culturales y naturales que cautivan a cualquier viajero.</p>
             </div>
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="5">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -404,6 +405,7 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
+              <div id="message5" style="display: none;"></div>
             </div>
           </div>
         </div>
@@ -455,7 +457,7 @@ $isAuthenticated = isset($_SESSION['username']);
               <p>Un viaje al Gran Cañón es una experiencia impresionante que combina aventura, geología y naturaleza. Desde las majestuosas vistas de sus acantilados y formaciones rocosas hasta las emocionantes rutas de senderismo y el sereno descenso por el río Colorado, este destino ofrece una inmersión en uno de los paisajes naturales más espectaculares del mundo.</p>
             </div>
             <div class="booking-details">
-              <form id="bookingForm">
+              <form id="bookingForm" data-paquete-id="6">
                 <label for="numPersons">Número de personas:</label>
                 <input type="number" id="numPersons" name="numPersons" min="1" max="10" required>
 
@@ -469,13 +471,14 @@ $isAuthenticated = isset($_SESSION['username']);
 
                 <button type="submit">Reservar</button>
               </form>
+              <div id="message6" style="display: none;"></div>
             </div>
           </div>
         </div>
   </section>
   </div>
   </section>
- 
+
   <section id="servicos" class="servicos">
     <h1 class="servicos-title">Servicios</h1>
     <div class="servicos-cards">
@@ -485,7 +488,7 @@ $isAuthenticated = isset($_SESSION['username']);
           <h3>Tour guiados</h3>
           <p>Explora destinos fascinantes con la comodidad de un guía experto.</p>
         </div>
-       
+
       </div>
 
       <div class="card">
@@ -494,9 +497,9 @@ $isAuthenticated = isset($_SESSION['username']);
           <h3>Fotográfia Profesional</h3>
           <p> Captura cada momento especial de tu viaje con la ayuda de nuestros fotógrafos profesionales.
 
-</p>
+          </p>
         </div>
-        
+
       </div>
 
       <div class="card">
@@ -505,7 +508,7 @@ $isAuthenticated = isset($_SESSION['username']);
           <h3>Alquiler de vehículos</h3>
           <p>Viaja a tu propio ritmo con nuestro servicio de alquiler de vehículos.</p>
         </div>
-     
+
       </div>
     </div>
   </section>
@@ -523,27 +526,26 @@ $isAuthenticated = isset($_SESSION['username']);
     <div id="map"></div>
   </section>
   <script>
-      function searchPackage() {
-  // Obtener el valor del campo de búsqueda
-  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    function searchPackage() {
+      // Obtener el valor del campo de búsqueda
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
-  // Obtener todas las tarjetas de paquetes
-  const packageCards = document.querySelectorAll('.card');
+      // Obtener todas las tarjetas de paquetes
+      const packageCards = document.querySelectorAll('.card');
 
-  // Recorrer todas las tarjetas y ocultar/mostrar según coincida con la búsqueda
-  packageCards.forEach(card => {
-    const packageName = card.querySelector('.card-content h1').innerText.toLowerCase();
+      // Recorrer todas las tarjetas y ocultar/mostrar según coincida con la búsqueda
+      packageCards.forEach(card => {
+        const packageName = card.querySelector('.card-content h1').innerText.toLowerCase();
 
-    // Comprobar si el nombre del paquete incluye el término de búsqueda
-    if (packageName.includes(searchInput)) {
-      card.style.display = 'block'; // Mostrar el paquete
-    } else {
-      card.style.display = 'none'; // Ocultar el paquete
+        // Comprobar si el nombre del paquete incluye el término de búsqueda
+        if (packageName.includes(searchInput)) {
+          card.style.display = 'block'; // Mostrar el paquete
+        } else {
+          card.style.display = 'none'; // Ocultar el paquete
+        }
+      });
     }
-  });
-}
-
-            </script>
+  </script>
 
   <script>
     // feather icons

@@ -2,13 +2,18 @@
 require 'connection.php';
 session_start();
 
+if (!isset($_SESSION['id'])) {
+    $response = array('success' => false, 'message' => 'Usuario no autenticado');
+    echo json_encode($response);
+    exit();
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numPersons = $_POST['numPersons'];
     $selectDate = $_POST['selectDate'];
     $id_usuario = $_SESSION['id'];
-    
-    // Suponiendo que tienes un ID de paquete predefinido
-    $id_paquete = rand(1, 6); // Cambia esto por el ID del paquete correspondiente
+    $id_paquete = $_POST['paquete_id'];
 
     $sql = "INSERT INTO usuarios_paquetes (id_usuario, id_paquete, personas, fecha) VALUES (?, ?, ?, ?)";
 

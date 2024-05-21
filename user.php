@@ -50,7 +50,7 @@ $conn->close();
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <div class="user">
-      <img src="data:image/*;base64,<?php echo htmlspecialchars($user['imagen']); ?>" alt="me" class="user-img">
+      <img src="<?php echo htmlspecialchars($user['imagen']); ?>" alt="me" class="user-img">
       <div>
         <p class="bold"><?php echo htmlspecialchars($user['username']); ?></p>
         <p><?php echo htmlspecialchars($user['email']); ?></p>
@@ -61,7 +61,7 @@ $conn->close();
       <li>
         <a onclick="showContent('user')">
           <i class='bx bxs-user-detail'></i>
-          <span class="nav-item">Usurio</span>
+          <span class="nav-item">Usuario</span>
         </a>
         <span class="tooltip">Usuario</span>
       </li>
@@ -107,7 +107,7 @@ $conn->close();
 
     <div id="viajes" class="content-section">
       <h1>Viajes<i class='bx bxs-plane-take-off'></i></h1>
-      
+
       <div class="card">
         <img class="card-image" src="assets/nepal.jpg" alt="Nepal">
         <div class="card-content">
@@ -125,6 +125,7 @@ $conn->close();
   </div>
 
   <script src="js/usuario.js"></script>
+  <script src="js/get_paquetes.js"></script>
 </body>
 
 </html>

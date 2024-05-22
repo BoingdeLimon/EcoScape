@@ -43,10 +43,7 @@ $isAuthenticated = isset($_SESSION['username']);
         <li>
           <input type="text" id="searchInput" placeholder="Buscar paquete...">
           <a href="#pacotes" onclick="searchPackage()">Buscar</a>
-
         </li>
-
-
       </ul>
     </nav>
 

@@ -106,20 +106,7 @@ $conn->close();
     </div>
 
     <div id="viajes" class="content-section">
-      <h1>Viajes<i class='bx bxs-plane-take-off'></i></h1>
-
-      <div class="card">
-        <img class="card-image" src="assets/nepal.jpg" alt="Nepal">
-        <div class="card-content">
-          <h1>Viaje a Nepal. Grupo verano. Sonrisas en el Himalaya</h1>
-          <ul>
-            <li><i data-feather="coffee"></i>Café</li>
-            <li><i data-feather="wifi"></i>Wi-Fi</li>
-            <li><i data-feather="map"></i>Recorrido</li>
-          </ul>
-        </div>
-      </div>
-
+      
     </div>
 
   </div>

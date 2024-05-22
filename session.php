@@ -95,7 +95,7 @@
         </div>
       </div>
 
-      <div class="media-options">
+      <!-- <div class="media-options">
         <a href="#">
           <i class='bx bxl-google'></i>
           <span>Login with Google</span>
@@ -104,7 +104,7 @@
           <i class='bx bxl-facebook-circle'></i>
           <span>Login with Facebook</span>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
   <script src="js/script.js"></script>

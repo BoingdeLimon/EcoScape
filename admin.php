@@ -36,7 +36,7 @@ $conn->close();
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="styles/user.css" />
-  <title>Usuario 🪴</title>
+  <title>Administrador ⚙️</title>
 </head>
 
 <body>
@@ -60,10 +60,10 @@ $conn->close();
     <ul>
       <li>
         <a onclick="showContent('user')">
-          <i class='bx bxs-user-detail'></i>
-          <span class="nav-item">Usuario</span>
+          <i class='bx bx-package'></i>
+          <span class="nav-item">Nuevo</span>
         </a>
-        <span class="tooltip">Usuario</span>
+        <span class="tooltip">Nuevo</span>
       </li>
       <li>
         <a onclick="showContent('viajes')">
@@ -91,17 +91,19 @@ $conn->close();
     </div>
 
     <div id="user" class="content-section">
-      <h1>Editar datos de usuario</h1>
-      <form enctype="multipart/form-data" id="update-form">
-        <label for="username">Usuario: <i class='bx bxs-user'></i></label>
-        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
-        <label for="password">Contraseña: <i class='bx bxs-lock-alt'></i></label>
-        <input type="password" name="password" id="password" required><br><br>
-        <label for="email">E-mail: <i class='bx bxs-envelope'></i></label>
-        <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required><br><br>
-        <label for="image">Selecciona una imagen:</label>
+      <h1>Nuevo paquete</h1>
+      <form enctype="multipart/form-data" id="paquete-form">
+        <label for="name">Nombre: <i class='bx bx-package'></i></label>
+        <input type="text" name="name" id="name" required><br><br>
+        <label for="name">Descripcion: <i class='bx bx-message-square-detail'></i></label>
+        <input type="text" name="desc" id="desc" required><br><br>
+        <label for="image">Imagen: <i class='bx bx-image bx-tada'></i></label>
         <input type="file" name="image" id="image" accept="image/*" required><br><br>
-        <button type="submit">Actualizar<i class='bx bx-refresh bx-spin'></i></button>
+        <label for="price">Precio: <i class='bx bx-dollar bx-tada'></i></label>
+        <input type="text" name="price" id="price" required><br><br>
+        <label for="details">Detalles: <i class='bx bx-list-ol'></i></label>
+        <input type="text" name="details" id="details" required><br><br>
+        <button type="submit">Crear <i class='bx bx-check'></i></button>
       </form>
       <div id="message" style="display: none;"></div>
     </div>
@@ -112,8 +114,8 @@ $conn->close();
 
   </div>
 
-  <script src="js/usuario.js"></script>
-  <script src="js/get_paquetes.js"></script>
+  <script src="js/new_package.js"></script>
+  <script src="js/get_admin_paquetes.js"></script>
 </body>
 
 </html>

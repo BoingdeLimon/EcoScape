@@ -30,6 +30,9 @@ document.getElementById("update-form").addEventListener("submit", function (even
                 var message = document.getElementById("message");
                 message.style.display = "block";
                 message.textContent = response.message;
+                setTimeout(function() {
+                    location.reload();
+                }, 1000);
             } else {
                 // Mostrar mensaje de error al actualizar
                 var message = document.getElementById("message");

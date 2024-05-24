@@ -1,3 +1,21 @@
+let btn = document.querySelector('#btn');
+let sidebar = document.querySelector('.sidebar');
+
+btn.onclick = function () {
+    sidebar.classList.toggle('active');
+};
+
+function showContent(sectionId) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.classList.add('active');
+        } else {
+            section.classList.remove('active');
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchPaquetes();
 
@@ -10,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchPaquetes() {
-    fetch('get_paquetes.php')
+    fetch('get_admin_paquetes.php')
         .then(response => response.json())
         .then(data => {
             if (data.error) {
@@ -42,12 +60,9 @@ function displayPaquetes(paquetes) {
                 <div class="product-img">
                     <img src="${paquete.imagen}" alt="${paquete.nombre}" />
                     <div class="product-dsc">
-                        <p><a href="#">${paquete.nombre}</a></p>
-                        <span>${paquete.precio + paquete.personas * 5000} MXN</span>
-
-                        <p>Personas: ${paquete.personas}</p>
-                        <p>${paquete.fecha}</p>
-                        <p >Detalles: ${paquete.detalles}</p>
+                        <p><a>${paquete.nombre}</a></p>
+                        <span>${paquete.precio} MXN</span>
+                        <p>Detalles: ${paquete.detalles}</p>
                     </div>
                 </div>
                 <button class="remove-paquete" data-paquete-id="${paquete.id}">Eliminar</button>
@@ -58,7 +73,7 @@ function displayPaquetes(paquetes) {
 }
 
 function removePaquete(paqueteId) {
-    fetch('remove_paquete.php', {
+    fetch('remove_admin_package.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

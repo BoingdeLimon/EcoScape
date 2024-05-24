@@ -14,9 +14,6 @@ $isAuthenticated = isset($_SESSION['username']);
   <link rel="stylesheet" href="styles/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/modal.js"></script>
-  <script src="js/imagen.js"></script>
 </head>
 
 <body>
@@ -34,7 +31,11 @@ $isAuthenticated = isset($_SESSION['username']);
         <li><a href="#contato"><i data-feather="user"></i></a></li>
         <?php
         if (isset($_SESSION['username'])) {
-          echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
+          if ($_SESSION['username'] != 'admin') {
+            echo '<li id="user"><a href="user.php"><i data-feather="user-check"></i></a></li>';
+          } else {
+            echo '<li id="user"><a href="admin.php"><i data-feather="settings"></i></a></li>';
+          }
           echo '<li><a href="logout.php"><i data-feather="log-out"></i></a></li>';
         } else {
           echo '<li><a href="session.php"><i data-feather="log-in"></i></a></li>';
@@ -472,8 +473,8 @@ $isAuthenticated = isset($_SESSION['username']);
             </div>
           </div>
         </div>
-  </section>
-  </div>
+      </div>
+    </div>
   </section>
 
   <section id="servicos" class="servicos">
@@ -545,18 +546,6 @@ $isAuthenticated = isset($_SESSION['username']);
   </script>
 
   <script>
-    // feather icons
-    feather.replace();
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
     // Initialize and add the map
     function initMap() {
       // The location of Uluru
@@ -580,7 +569,9 @@ $isAuthenticated = isset($_SESSION['username']);
   </script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-  <script src="js/paquete.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/main_packages.js" defer></script>
+  <!-- <script src="js/modal.js"></script> -->
 </body>
 
 </html>

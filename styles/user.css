@@ -8,6 +8,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Esto previene cualquier desplazamiento no deseado */
+}
+
 .user-img {
   width: 50px;
   border-radius: 20px 2px;
@@ -15,15 +22,17 @@
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100vh; /* Asegura que el sidebar ocupe toda la altura de la ventana */
   width: 80px;
   background-color: #C0D1C2;
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
 }
+
+
 
 .sidebar.active~.main-content {
   left: 250px;
@@ -175,14 +184,16 @@
   justify-content: start;
   position: relative;
   background-color: #eee;
-  height: 100%;
+  height: 100vh; /* Asegúrate de que ocupe toda la altura de la ventana */
   min-height: 100vh;
   top: 0;
-  left: 80px;
+  left: 80px; /* Alinea el contenedor principal con el sidebar */
   transition: all 0.5s ease;
   width: calc(100% - 80px);
   padding: 1rem;
 }
+
+
 
 .content-section {
   display: none;

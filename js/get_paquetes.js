@@ -35,6 +35,7 @@ function displayPaquetes(paquetes) {
     container.innerHTML = ''; // Clear previous content if any
 
     paquetes.forEach(paquete => {
+        const precio = parseFloat(paquete.precio) + parseFloat(paquete.personas) * 5000;
         const productDiv = document.createElement('div');
         productDiv.classList.add('col-xs-12', 'col-sm-6', 'col-md-3', 'r-margin-top');
         productDiv.innerHTML = `
@@ -43,7 +44,7 @@ function displayPaquetes(paquetes) {
                     <img src="${paquete.imagen}" alt="${paquete.nombre}" />
                     <div class="product-dsc">
                         <p><a href="#">${paquete.nombre}</a></p>
-                        <span>${paquete.precio + paquete.personas * 5000} MXN</span>
+                        <span>${precio} MXN</span>
 
                         <p>Personas: ${paquete.personas}</p>
                         <p>${paquete.fecha}</p>
